@@ -69,8 +69,7 @@ $$ LANGUAGE plpgsql;
 
 5/
 -- Ajouter une période de disponibilité pour un matériel (exemple : matériel 4 du 1 au 30 juin 2025)
-INSERT INTO disponibilite (id_materiel, date_debut, date_fin)
-VALUES (4, '2025-06-01', '2025-06-30');
+INSERT INTO disponibilite (id_materiel, date_debut, date_fin) VALUES (4, '2025-06-01', '2025-06-30');
 
 -- Modifier une période de disponibilité existante (id_disponibilite = 2)
 UPDATE disponibilite SET date_debut = '2025-06-05', date_fin = '2025-06-25' WHERE id_disponibilite = 2;
@@ -81,3 +80,8 @@ DELETE FROM disponibilite WHERE id_disponibilite = 2;
 
 6/ -- Réalise une réservation du matériel d’ID 4 par l’utilisateur d’ID 1,
     SELECT reserver_materiel(1, 4, '2025-06-05', '2025-06-10');
+-- 1 : identifiant de l'utilisateur qui réserve le matériel
+-- 4 : identifiant du matériel à réserver
+-- '2025-06-05' : date de début de la réservation (au format YYYY-MM-DD)
+-- '2025-06-10' : date de fin de la réservation
+
