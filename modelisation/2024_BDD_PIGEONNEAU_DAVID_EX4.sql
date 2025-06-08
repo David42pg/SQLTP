@@ -8,6 +8,7 @@ FROM reservation WHERE date_debut >= '2025-05-01' AND date_fin <= '2025-05-31';
 
 
 2/
+-- Compte le nombre d'utilisateurs distincts ayant effectué au moins une réservation
 SELECT COUNT(DISTINCT id_utilisateur) AS utilisateurs_ayant_emprunte
 FROM reservation;
 
